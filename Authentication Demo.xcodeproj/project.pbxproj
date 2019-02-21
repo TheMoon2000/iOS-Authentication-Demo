@@ -13,7 +13,8 @@
 		CCC12CEE221B5E8A004DC937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCC12CED221B5E8A004DC937 /* Assets.xcassets */; };
 		CCC12CF1221B5E8A004DC937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCC12CEF221B5E8A004DC937 /* LaunchScreen.storyboard */; };
 		CCC12CF9221B5F20004DC937 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC12CF8221B5F20004DC937 /* LoginController.swift */; };
-		CCC12CFB221B6418004DC937 /* EditableTextCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC12CFA221B6418004DC937 /* EditableTextCellTableViewCell.swift */; };
+		CCC12CFB221B6418004DC937 /* EditableTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC12CFA221B6418004DC937 /* EditableTextCell.swift */; };
+		CCC12D01221B78DA004DC937 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CCC12D00221B78DA004DC937 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		CCC12CF0221B5E8A004DC937 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCC12CF2221B5E8A004DC937 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCC12CF8221B5F20004DC937 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		CCC12CFA221B6418004DC937 /* EditableTextCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableTextCellTableViewCell.swift; sourceTree = "<group>"; };
+		CCC12CFA221B6418004DC937 /* EditableTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableTextCell.swift; sourceTree = "<group>"; };
+		CCC12D00221B78DA004DC937 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +76,10 @@
 				CCC12CE6221B5E88004DC937 /* AppDelegate.swift */,
 				CCC12CE8221B5E88004DC937 /* ViewController.swift */,
 				CCC12CF8221B5F20004DC937 /* LoginController.swift */,
-				CCC12CFA221B6418004DC937 /* EditableTextCellTableViewCell.swift */,
+				CCC12CFA221B6418004DC937 /* EditableTextCell.swift */,
 				CCC12CED221B5E8A004DC937 /* Assets.xcassets */,
 				CCC12CEF221B5E8A004DC937 /* LaunchScreen.storyboard */,
+				CCC12D00221B78DA004DC937 /* README.md */,
 				CCC12CF2221B5E8A004DC937 /* Info.plist */,
 			);
 			path = "Authentication Demo";
@@ -151,6 +154,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC12D01221B78DA004DC937 /* README.md in Resources */,
 				CCC12CF1221B5E8A004DC937 /* LaunchScreen.storyboard in Resources */,
 				CCC12CEE221B5E8A004DC937 /* Assets.xcassets in Resources */,
 			);
@@ -210,7 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC12CFB221B6418004DC937 /* EditableTextCellTableViewCell.swift in Sources */,
+				CCC12CFB221B6418004DC937 /* EditableTextCell.swift in Sources */,
 				CCC12CE9221B5E88004DC937 /* ViewController.swift in Sources */,
 				CCC12CF9221B5F20004DC937 /* LoginController.swift in Sources */,
 				CCC12CE7221B5E88004DC937 /* AppDelegate.swift in Sources */,

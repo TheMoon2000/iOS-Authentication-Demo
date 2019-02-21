@@ -49,12 +49,16 @@ class LoginController: UITableViewController {
                 let raw = try JSON(data: data!)
                 print(raw)
                 DispatchQueue.main.async {
-                    self.homeViewController?.loginButton.isHidden = true
-                    self.homeViewController?.welcomeMessage.isHidden = false
+                    self.homeViewController?.loginButton.setTitle("Log out", for: .normal)
+                    self.homeViewController?.loginButton.tintColor = redTint
+                    self.homeViewController?.loginButton.layer.borderColor = redTint.cgColor
                     self.dismissView()
                 }
             } catch {
-                let msg = String(data: data!, encoding: .utf8) ?? "Unable to parse data string."
+                guard let msg = String(data: data!, encoding: .utf8) else {
+                    print("Unable to parse data string.")
+                    return
+                }
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Login Error", message: msg, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
