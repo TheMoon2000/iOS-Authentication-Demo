@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         } else {
             let alert = UIAlertController(title: "Log Out?", message: "You will be signed out.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Log out", style: .default, handler: { (action) in
+            alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: { (action) in
                 sender.setTitle("Login", for: .normal)
                 sender.tintColor = blueTint
                 sender.layer.borderColor = blueTint.cgColor
