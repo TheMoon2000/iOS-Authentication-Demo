@@ -1,4 +1,4 @@
-# User Authentication Demo Using URLSession
+# iOS Authentication Demo Using URLSession
 
 ## Setup
 1. For the code to work, you must first install MySQL on your Mac from https://dev.mysql.com/downloads/mysql/.
