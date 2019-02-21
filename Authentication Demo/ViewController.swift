@@ -8,7 +8,10 @@
 
 import UIKit
 
+/// Red tint color for log out button
 let redTint = UIColor(red: 1, green: 0.55, blue: 0.54, alpha: 1)
+
+/// Blue tint color for login button
 let blueTint = UIColor(red: 130/255, green: 180/255, blue: 250/255, alpha: 1)
 
 class ViewController: UIViewController {
@@ -25,6 +28,7 @@ class ViewController: UIViewController {
         self.insertLoginButton()
     }
     
+    /// Add a login button to the view programmatically
     private func insertLoginButton() {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
@@ -48,6 +52,7 @@ class ViewController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 46).isActive = true
     }
     
+    /// Action associated with the login / logout button
     @objc func presentLoginView(_ sender: UIButton) {
         if sender.title(for: .normal) == "Login" {
             let loginController = LoginController()

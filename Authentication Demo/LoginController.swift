@@ -18,23 +18,31 @@ class LoginController: UITableViewController {
         
         self.tableView = UITableView(frame: .zero, style: .grouped)
 
+        
+        // Add the cancel button to the top left corner of the navigation item
         let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(dismissView))
         self.navigationItem.leftBarButtonItem = cancelButton
         
+        // Add the login button to the top right corner of the navigation item
         let loginButton = UIBarButtonItem(title: "Login", style: .done, target: self, action: #selector(sendLoginRequest))
         self.navigationItem.rightBarButtonItem = loginButton
     }
     
+    /// A convenient function that dismisses the current view controller
     @objc func dismissView() {
         self.dismiss(animated: true, completion: nil)
     }
     
+    /// The function that is called when the user presses the 'Login' button
     @objc func sendLoginRequest() {
+        
+        // Fetch the strings for the username and password which the user has entered
         let usernameCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! EditableTextCell
         let username = usernameCell.textField.text ?? ""
         let passwordCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! EditableTextCell
         let password = passwordCell.textField.text ?? ""
         
+        /// Connect to localhost through an URLSession
         var loginRequest = URLRequest(url: URL(string: "http://127.0.0.1/login.php")!)
         loginRequest.httpMethod = "POST"
         loginRequest.httpBody = "username=\(username)&password=\(password)".data(using: .utf8)
@@ -60,6 +68,7 @@ class LoginController: UITableViewController {
                     return
                 }
                 DispatchQueue.main.async {
+                    // If user can't login, display the error message from the server.
                     let alert = UIAlertController(title: "Login Error", message: msg, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
