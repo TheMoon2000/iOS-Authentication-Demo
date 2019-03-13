@@ -42,10 +42,12 @@ class LoginController: UITableViewController {
         let passwordCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0)) as! EditableTextCell
         let password = passwordCell.textField.text ?? ""
         
+        let credentials = JSON(dictionaryLiteral: ("username", username), ("password", password))
+                
         /// Connect to localhost through an URLSession
         var loginRequest = URLRequest(url: URL(string: "http://127.0.0.1/login.php")!)
         loginRequest.httpMethod = "POST"
-        loginRequest.httpBody = "username=\(username)&password=\(password)".data(using: .utf8)
+        loginRequest.httpBody = credentials.description.data(using: .utf8)
         
         let task = URLSession.shared.dataTask(with: loginRequest) { (data, response, error) in
             if let e = error {
