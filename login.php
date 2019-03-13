@@ -1,9 +1,13 @@
 <?php
 
-// $_POST = $_GET; // Web debugging mode only
+if (empty($_POST)) {
+  $_POST = $_GET; // Enables web access
+}
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+$data = json_decode(file_get_contents('php://input'), true);
+
+$username = $data['username'];
+$password = $data['password'];
 
 if (!$username || !$password) {
   die("Invalid login credentials.");
